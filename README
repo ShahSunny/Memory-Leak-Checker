@@ -1,2 +1,10 @@
-This is a simple memory leak checker, Currently It works only with C++ code and New and Delete.
+This is a simple memory leak checker, Currently It works only with C++ code and monitors only New and Delete.
+Usage:
+->Just include LeakChecker.cpp and LeakChecker.h file in your project
+->By default, when your program call exit() or it returns from main, LeakChecker will generate memoryLeak output on the location give by define LEAK_REPORT_FILE_NAME, which is there in LeakChecker.cpp file.
+->If you want to generate output in the middle of the code ( not at the exit time ) then call below function.
+    LeakChecker::GetLeakChecker()->generateLeakReport();
+  Current code stops monitoring code for Leaks once you call above function.
+
+
 Let me know if you need more features. my email is sunny.cpp at gmail dot com
